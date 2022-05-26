@@ -19,6 +19,7 @@ export const Synth = ({ id }: SynthProps) => {
 
     const selectSynth = (state: RootState) => state.synths.synths[id]
     const synthState: ISynth = useAppSelector(selectSynth)
+    const [elRefs, setElRefs] = useState([])
 
     const volume = useMemo(() => { return new Tone.Volume(0) }, [])
     const delay = useMemo(() => { return new Tone.FeedbackDelay("8n", 0) }, [])
